@@ -25,9 +25,10 @@ function Chatbot() {
     setInput("");
 
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/chat`, {
-        params: { message: input }
-      });
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/chat`,
+         {
+           message: input
+        });
       const botReply = response?.data?.reply || "No response from server";
 
       setMessages((prev) => [
